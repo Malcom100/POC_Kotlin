@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.test.poc_kotlin"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -21,6 +21,10 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
+    compileOptions{
+        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,6 +33,14 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:design:25.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //butter knife
+    compile 'com.jakewharton:butterknife:8.5.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.0'
+
+    //mosby android
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+
 }
 repositories {
     mavenCentral()
